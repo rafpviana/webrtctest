@@ -19,7 +19,7 @@ var options = {
 
 var app = https.createServer(options, function (req, res) {
   fileServer.serve(req, res);
-}).listen(process.env.PORT || 5000);
+}).listen(5000);
 
 
 // var app = http.createServer(function(req, res) {//
