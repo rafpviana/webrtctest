@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Realtime communication with WebRTC</title>
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.min.css" />
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="col-md-12 text-center">
+      <h1>Realtime communication with WebRTC</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+          <div class="row">
+
+            <div class="col-md-6 text-center">  
+              <button class="btn btn-default" id="buttonStartCall">Iniciar Chamada</button>
+            </div>
+            
+            <div class="col-md-6 text-center">
+              <button class="btn btn-default" id="buttonEndCall">Encerrar Chamada</button>
+            </div>
+
+          </div>
+          
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <br>
+    <div class="row">
+
+      <div class="col-md-2"></div>
+
+      <div class="col-md-8">
+        <div class="row">
+
+          <div class="col-md-6 text-center">
+            <video id="videoTagForStreamSender" autoplay muted></video>
+          </div>
+    
+          <div class="col-md-6 text-center">
+            <video id="videoTagForStreamReceiver" autoplay></video>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="col-md-2"></div>
+
+      
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/lib/adapter.js"></script>
+  <script src="js/main.js"></script>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script src="bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
