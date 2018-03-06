@@ -6,25 +6,25 @@ var nodeStatic = require('node-static');
 var socketIO = require('socket.io');
 var fileServer = new(nodeStatic.Server)();
 
-// var http = require('http');
+var http = require('http');
 
 
-var https = require('https');
+// var https = require('https');
 var fs = require('fs');
 
-var options = {
-  key: fs.readFileSync('hostkey.pem'),
-  cert: fs.readFileSync('hostcert.pem')
-};
+// var options = {
+//   key: fs.readFileSync('hostkey.pem'),
+//   cert: fs.readFileSync('hostcert.pem')
+// };
 
-var app = https.createServer(options, function (req, res) {
-  fileServer.serve(req, res);
-}).listen(5000);
-
-
-// var app = http.createServer(function(req, res) {//
+// var app = https.createServer(options, function (req, res) {
 //   fileServer.serve(req, res);
-// }).listen(8080);
+// }).listen(process.EINVAL.PORT || 3000);
+
+
+var app = http.createServer(function(req, res) {//
+  fileServer.serve(req, res);
+}).listen(process.EINVAL.PORT || 3000);
 
 var io = socketIO.listen(app);
 io.sockets.on('connection', function(socket) {//
