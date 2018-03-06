@@ -1,6 +1,7 @@
 'use strict';
 
 var os = require('os');
+
 var nodeStatic = require('node-static');
 var socketIO = require('socket.io');
 var fileServer = new(nodeStatic.Server)();
@@ -18,7 +19,7 @@ var options = {
 
 var app = https.createServer(options, function (req, res) {
   fileServer.serve(req, res);
-}).listen(8000);
+}).listen(process.env.PORT || 5000);
 
 
 // var app = http.createServer(function(req, res) {//
